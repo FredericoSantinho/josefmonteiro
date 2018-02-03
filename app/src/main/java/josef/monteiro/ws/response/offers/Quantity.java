@@ -8,6 +8,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "base", "fee"
 }) public class Quantity {
 
-  @JsonProperty("base") public Integer base;
+  @JsonProperty("base") public Float base;
   @JsonProperty("fee") public Float fee;
 }
