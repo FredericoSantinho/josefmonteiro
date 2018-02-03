@@ -3,6 +3,7 @@ package josef.monteiro;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import io.reactivex.schedulers.Schedulers;
@@ -17,19 +18,25 @@ public class MainActivity extends AppCompatActivity {
 
   private OffersEndpoint offersEndpoint;
   private TextView resultTv;
+  private EditText pairEt;
+  private EditText totalEt;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
     resultTv = findViewById(R.id.result);
+    pairEt = findViewById(R.id.pair);
+    totalEt = findViewById(R.id.total);
 
     offersEndpoint = new JosefMonteiroEndpointFactory().newOffersEndpoint();
   }
 
   public void orders(View view) {
-    String symbol = "ETH/BTC";
-    double total = 1000d;
+    String symbol = pairEt.getText()
+        .toString();
+    double total = Double.parseDouble(totalEt.getText()
+        .toString());
     offersEndpoint.call(symbol, total)
         .subscribeOn(Schedulers.io())
         .subscribe(this::onNext, this::onError);

@@ -31,15 +31,19 @@
           />
 
       <EditText
+          android:id="@+id/pair"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:hint="Pair"
+          android:hint="1000"
+          android:text="ETH/BTC"
           />
 
       <EditText
+          android:id="@+id/total"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:hint="Ammount"
+          android:hint="Total"
+          android:text="1000"
           />
 
     </LinearLayout>
