@@ -11,7 +11,6 @@ import josef.monteiro.ws.JosefMonteiroEndpointFactory;
 import josef.monteiro.ws.OffersEndpoint;
 import josef.monteiro.ws.response.offers.Exchange;
 import josef.monteiro.ws.response.offers.Offers;
-import josef.monteiro.ws.response.offers.ResponseExample;
 import monteiro.josef.pt.josefmonteiro.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -51,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
   private void onNext(Offers offers) {
     StringBuilder resultBuilder = new StringBuilder();
 
-    ResponseExample response = offers.responseExample.get(0);
+    Offers response = offers;
     for (Exchange exchange : response.exchanges) {
 
       try {

@@ -6,9 +6,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL) @JsonPropertyOrder({
-    "arguments", "response-example"
+    "source", "exchanges"
 }) public class Offers {
 
-  @JsonProperty("arguments") public Arguments arguments;
-  @JsonProperty("response-example") public List<ResponseExample> responseExample = null;
+  @JsonProperty("source") public Source source;
+  @JsonProperty("exchanges") public List<Exchange> exchanges = null;
+
 }
+
